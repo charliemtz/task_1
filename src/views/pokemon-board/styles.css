@@ -1,0 +1,28 @@
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+body {
+  margin: 0;
+}
+.container {
+  background-image: linear-gradient(to bottom right, #fe5969, #fe906f);
+}
+.title-board {
+  display: flex;
+  justify-content: center;
+  font-family: Pokemon;
+  color: transparent;
+  letter-spacing: 4px;
+  color: white;
+}
+
+.container-board {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.item-board {
+  width: 40vh;
+  max-height: 356.9px;
+  max-width: 356.9px;
+  margin: 1%;
+}
