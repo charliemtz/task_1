@@ -10,7 +10,7 @@ import './styles/App.css';
 
 
 function App() {
-  const N = 100;
+  const N = 255;
   
   const QUESTION_MARK_URL = "https://upload.wikimedia.org/wikipedia/commons/d/d9/Icon-round-Question_mark.svg";
   const POKEAPI_URL = "https://pokeapi.co/api/v2";
@@ -26,8 +26,8 @@ function App() {
     });
   }
   const [pokemons, setPokemons] = useState(initialArray);
-  const rows = useState(Math.sqrt(N));
-  const cols = useState(Math.sqrt(N));
+  const rows = useState(6);
+  const cols = useState(8);
   const [url, setUrl] = useState('');
   const [clickedId, setClickedId] = useState(1);
 

@@ -13,23 +13,46 @@
 .top-row {
   height: 80%;
   background-color: rgba(255, 255, 255, 0.4);
+  overflow-y: overlay;
+  min-width: 90%;
 }
+
 .bottom-row {
   height: 20%;
 }
 
 .cell {
   color: white;
-  /*background: orangered;*/
   font-size: 2rem;
   text-align: center;
-  margin: auto auto 0px auto; 
+  margin: 10% auto; 
+}
+
+.top-row::-webkit-scrollbar {
+  width: 10px;
+}
+
+.top-row::-webkit-scrollbar-track {
+  background: #DED1EF;
+  border-radius: 5px;
+  height: 90%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.top-row::-webkit-scrollbar-thumb {
+  background: #9277B7;
+  border-radius: 5px;
+}
+
+.top-row::-webkit-scrollbar-thumb:hover {
+  background: #B8A4D3; 
 }
 
 .pokemon {
   margin: auto;
   max-width: 67%;
-  height: auto; /*to preserve the aspect ratio of the image*/
+  height: auto; 
   opacity: 100%;
 }
 
