@@ -1,7 +1,27 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/PokeDescription.css';
 
 function PokeDescription(props) {
+  const tiposTraducidos = {
+    normal: 'normal',
+    fire: 'fuego',
+    water: 'agua',
+    electric: 'eléctrico',
+    grass: 'planta',
+    ice: 'hielo',
+    fighting: 'lucha',
+    poison: 'veneno',
+    ground: 'tierra',
+    flying: 'volador',
+    psychic: 'psíquico',
+    bug: 'bicho',
+    rock: 'roca',
+    ghost: 'fantasma',
+    dragon: 'dragón',
+    dark: 'siniestro',
+    steel: 'acero',
+    fairy: 'hada'
+  }
+
   const typesBackground = {
     normal: '#A8A77A',
     fire: '#EE8130',
@@ -47,36 +67,30 @@ function PokeDescription(props) {
     return String(id).padStart(3, '0');
   }
 
-  /*const hexToLum = (hex) => {
-    const aRgbHex = hex.substring(1).match(/.{1,2}/g);
-    const [R, G, B] = [parseInt(aRgbHex[0], 16), parseInt(aRgbHex[1], 16), parseInt(aRgbHex[2], 16)];
-    return (0.299*R + 0.587*G + 0.114*B);
-  };*/
-
   return(
-    <div className="container-fluid p-0 min-vh-100">
+    <div className="container-fluid">
       <div className="header">
-        <div className="d-flex pb-3 pt-3 header-text column">
-          <div className="me-5 p-2"><p className="h2">{`N.º ${normalizeId(pokemon.id)}`}</p></div>
-          <div className="p-2"><p className="h2">{capitalize(pokemon.name)}</p></div>
+        <div className="d-flex pb-1 pt-1 header-text">
+          <div className="p-2 number"><p className="h2">{`N.º ${normalizeId(pokemon.id)}`}</p></div>
+          <div className="p-2"><p className="h2 name">{pokemon.name}</p></div>
         </div>
       </div>
       <div className="header row">
         <div className="header-text progress center-block">
-          <div className="progress-bar"></div>
+          <div className="bar"></div>
         </div>
       </div>
       <div className="contents row">  
 
         <div className="position-absolute cards-left">
-          <div className="card text-black bg-light mb-1 p-0">
+          <div className="card text-black mb-2 p-0">
             <div className="card-header">Altura</div>
             <div className="card-body">
               <h3 className="card-title">{(pokemon.height / 10).toLocaleString('es-AR')} m</h3>
             </div>
           </div>
 
-          <div className="card text-black bg-light p-0">
+          <div className="card text-black p-0">
             <div className="card-header">Peso</div>
             <div className="card-body">
               <h3 className="card-title">{(pokemon.weight / 10).toLocaleString('es-AR')} kg</h3>
@@ -87,8 +101,9 @@ function PokeDescription(props) {
         <div className="position-absolute mt-5">
           {pokemon.types.map((item) => {
             const type = item.type.name;
+            const tipo = tiposTraducidos[type];
             const bgColor = typesBackground[type];
-            return <p key={`type-${item.slot}`} className="badge types mb-3" style={{backgroundColor: bgColor}}>{type}</p>
+            return <p key={`type-${item.slot}`} className="badge types mb-3" style={{backgroundColor: bgColor}}>{tipo}</p>;
           })}
 
           <div className="card card-right text-black bg-light p-0 mt-5">
@@ -111,10 +126,3 @@ function PokeDescription(props) {
 }
 
 export default PokeDescription;
-
-
-/* <div className="footer row m-4">
-  <div className="bg-white rounded">
-    <p></p>
-  </div>
-</div> */
