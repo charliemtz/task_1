@@ -11,10 +11,12 @@
 }
 
 .top-row {
+  padding: 3% 0;
   height: 80%;
   background-color: rgba(255, 255, 255, 0.4);
   overflow-y: overlay;
   min-width: 90%;
+  border-radius: 0.3rem;
 }
 
 .bottom-row {
@@ -60,4 +62,45 @@
   margin: 10px auto 0px auto; 
   height: inherit;
   width: auto;
+}
+
+.popup {
+	visibility: hidden;
+	height: 0px;
+	opacity:0;
+  transition:visibility 0.3s linear,opacity 0.3s linear;
+}
+
+.popup-text:after {
+  content:'';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-top: solid 20px #66CBBE;
+  border-left: solid 20px transparent;
+  border-right: solid 20px transparent;
+}
+
+.popup-text {
+	position: relative;
+	background-color: dimgray;
+	bottom: 50px;
+	font-family: 'Lato', sans-serif;
+	font-size: 1.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.green-bar {
+  background-color: #66CBBE;
+  margin-top: 0.5rem;
+  height: 0.25rem;
+}
+
+.cell:hover .popup {
+	visibility: visible;
+	opacity: 0.9;
 }
