@@ -4,8 +4,8 @@ function PokeGrid(props) {
     const history = useHistory();
 
     const containerSizes = {
-        gridTemplateColumns: "0.8fr ".repeat(props.rows[0]),
-        gridTemplateRows: "0.8fr ".repeat(props.cols[0])
+        gridTemplateColumns: "1fr ".repeat(props.cols[0]),
+        gridTemplateRows: "1r ".repeat(props.rows[0])
     };
 
     const handleClick = (e) => {
@@ -17,17 +17,19 @@ function PokeGrid(props) {
 
     return (
         <div className="row top-row rounded-3" style={containerSizes}>
-        {props.pokemons.map((pokemon) =>
-            <div key={`cell-${pokemon.id}`} className={`cell`}>
-            <img 
-                className="pokemon" 
-                src={pokemon.sprite}
-                alt={`Pokemon ${pokemon.id}`}
-                id={pokemon.id}
-                value={pokemon.loaded}
-                onClick={handleClick}
-            />
-            </div>)}
+            {
+                props.pokemons.map((pokemon) =>
+                <div key={`cell-${pokemon.id}`} className={`cell`}>
+                    <img 
+                        className="pokemon" 
+                        src={pokemon.sprite}
+                        alt={`Pokemon ${pokemon.id}`}
+                        id={pokemon.id}
+                        value={pokemon.loaded}
+                        onClick={handleClick}
+                    />
+                </div>)
+            }
         </div>
     );
 }
