@@ -103,7 +103,7 @@ function PokeDescription(props) {
             const type = item.type.name;
             const tipo = tiposTraducidos[type];
             const bgColor = typesBackground[type];
-            return <p key={`type-${item.slot}`} className="badge types mb-3" style={{backgroundColor: bgColor}}>{tipo}</p>;
+            return <p key={`type-${item.slot}`} className="badge types mb-3" style={{backgroundColor: bgColor}}><img className="icon" src={`/icons/${type}.svg`} alt="icon"/>{tipo}</p>;
           })}
 
           <div className="card card-right text-black bg-light p-0 mt-5">
