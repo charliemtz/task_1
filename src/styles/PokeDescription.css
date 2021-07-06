@@ -2,10 +2,12 @@
 
 .container-fluid {
 	font-family: 'Lato', sans-serif;
+	padding: 0;
 }
 
 .card {
-	max-width: 18rem; 
+	max-width: 16rem;
+	border-radius: 0.5rem; 
 }
 
 .card-header {
@@ -13,15 +15,18 @@
 	color: white;
 	font-weight: bold;
 	font-size: larger;
+	border-radius: 0.5rem 0.5rem 0 0 !important; 
 }
 
 .card-title {
 	text-align: right;
+	color: dimgray;
 }
 
-.progress-bar {
-	width: 100%;
+.bar {
 	background-color: #9E80D7;
+	width: 100%;
+	border-radius: 1rem;
 }
 
 .progress {
@@ -40,6 +45,7 @@
 
 p.h2 {
 	font-weight: bold;
+	color: dimgray;
 }
 
 .contents {
@@ -62,7 +68,7 @@ p.h2 {
 .types {
 	display: block;
 	margin-left: auto;
-	width: 200px;
+	width: 15rem;
 	font-size: 2em;
 	text-transform: uppercase;
 }
@@ -77,4 +83,18 @@ ul.abilities {
 
 .footer {
 	width: auto;
+}
+
+.number {
+	margin-right: 10%;
+}
+
+.name {
+	text-transform: capitalize;
+}
+
+.icon {
+	height: 1.5rem;
+	margin-bottom: 0.5rem;
+	margin-right: 1rem;
 }
