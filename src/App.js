@@ -5,23 +5,23 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PokeGrid from "./components/PokeGrid";
 import PokeBall from "./components/PokeBall";
 import PokeDescription from "./components/PokeDescription";
-import { N, gridSize, urls } from "./utils/Constants";
+import { N, gridSize } from "./utils/Constants";
 import { randomNumberGenerator } from "./utils/NumberUtils";
 import { updatePokemons, preloadPokemons } from "./utils/PokeUtils";
 
 import "./styles/App.css";
 
 function App() {
-  let [initialArray, possibleNumbers] = preloadPokemons();
+  let [initialArray, possibleNumbers] = preloadPokemons(N);
   const [pokemons, setPokemons] = useState(initialArray);
   const rows = useState(gridSize.rows);
   const cols = useState(gridSize.cols);
-  const [url, setUrl] = useState("");
+  const [newId, setNewId] = useState();
   const [clickedId, setClickedId] = useState(1);
 
   useEffect(() => {
-    updatePokemons(url, setPokemons);
-  }, [url]);
+    updatePokemons(newId, setPokemons);
+  }, [newId]);
 
   function handlePokeballClick() {
     let randomId;
@@ -30,7 +30,7 @@ function App() {
         randomId = randomNumberGenerator(N);
       } while (!possibleNumbers.includes(randomId));
       possibleNumbers = possibleNumbers.filter((number) => randomId !== number);
-      setUrl(`${urls.pokeApi}/pokemon/${randomId}`);
+      setNewId(randomId);
     }
   }
 
