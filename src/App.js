@@ -5,16 +5,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PokeGrid from "./components/PokeGrid";
 import PokeBall from "./components/PokeBall";
 import PokeDescription from "./components/PokeDescription";
+import { N, gridSize, urls } from "./utils/Constants";
 
 import "./styles/App.css";
 
 function App() {
   const axios = require('axios').default;
-  const N = 255;
-
-  const QUESTION_MARK_URL =
-    "https://upload.wikimedia.org/wikipedia/commons/d/d9/Icon-round-Question_mark.svg";
-  const POKEAPI_URL = "https://pokeapi.co/api/v2";
 
   let initialArray = [];
   let possibleNumbers = [];
@@ -23,12 +19,12 @@ function App() {
     initialArray.push({
       id: i,
       loaded: false,
-      sprite: QUESTION_MARK_URL,
+      sprite: urls.questionMark,
     });
   }
   const [pokemons, setPokemons] = useState(initialArray);
-  const rows = useState(6);
-  const cols = useState(8);
+  const rows = useState(gridSize.rows);
+  const cols = useState(gridSize.cols);
   const [url, setUrl] = useState("");
   const [clickedId, setClickedId] = useState(1);
 
@@ -72,7 +68,7 @@ function App() {
         randomId = randomNumberGenerator(N);
       } while (!possibleNumbers.includes(randomId));
       possibleNumbers = possibleNumbers.filter((number) => randomId !== number);
-      setUrl(`${POKEAPI_URL}/pokemon/${randomId}`);
+      setUrl(`${urls.pokeApi}/pokemon/${randomId}`);
     }
   }
 

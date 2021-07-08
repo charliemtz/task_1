@@ -1,47 +1,14 @@
 import "../styles/PokeDescription.css";
+import { urls, typesMetadata } from "../utils/Constants";
 
 function PokeDescription(props) {
-  const tiposTraducidos = {
-    normal: "normal",
-    fire: "fuego",
-    water: "agua",
-    electric: "eléctrico",
-    grass: "planta",
-    ice: "hielo",
-    fighting: "lucha",
-    poison: "veneno",
-    ground: "tierra",
-    flying: "volador",
-    psychic: "psíquico",
-    bug: "bicho",
-    rock: "roca",
-    ghost: "fantasma",
-    dragon: "dragón",
-    dark: "siniestro",
-    steel: "acero",
-    fairy: "hada",
-  };
-
-  const typesBackground = {
-    normal: "#A8A77A",
-    fire: "#EE8130",
-    water: "#6390F0",
-    electric: "#F7D02C",
-    grass: "#7AC74C",
-    ice: "#96D9D6",
-    fighting: "#C22E28",
-    poison: "#A33EA1",
-    ground: "#E2BF65",
-    flying: "#A98FF3",
-    psychic: "#F95587",
-    bug: "#A6B91A",
-    rock: "#B6A136",
-    ghost: "#735797",
-    dragon: "#6F35FC",
-    dark: "#705746",
-    steel: "#B7B7CE",
-    fairy: "#D685AD",
-  };
+  function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+  
+  function normalizeId(id) {
+    return String(id).padStart(3, "0");
+  }
 
   let pokemon = {};
   if (props.pokemon.loaded === true) {
@@ -51,21 +18,12 @@ function PokeDescription(props) {
       name: "Missingno",
       id: 0,
       loaded: true,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d9/Icon-round-Question_mark.svg",
+      image: urls.questionMark,
       height: 0,
       types: [],
       weight: 0,
       abilities: [],
     };
-  }
-
-  function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-  function normalizeId(id) {
-    return String(id).padStart(3, "0");
   }
 
   return (
@@ -109,8 +67,8 @@ function PokeDescription(props) {
         <div className="position-absolute mt-5">
           {pokemon.types.map((item) => {
             const type = item.type.name;
-            const tipo = tiposTraducidos[type];
-            const bgColor = typesBackground[type];
+            const tipo = typesMetadata.localization[type];
+            const bgColor = typesMetadata.backgroundColors[type];
             return (
               <p
                 key={`type-${item.slot}`}
