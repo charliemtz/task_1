@@ -1,15 +1,8 @@
 import "../styles/PokeDescription.css";
-import { urls, typesMetadata } from "../utils/Constants";
+import { images, typesMetadata } from "../utils/Constants";
+import { normalizeId } from "../utils/StringUtils";
 
 function PokeDescription(props) {
-  function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-  
-  function normalizeId(id) {
-    return String(id).padStart(3, "0");
-  }
-
   let pokemon = {};
   if (props.pokemon.loaded === true) {
     pokemon = props.pokemon;
@@ -18,7 +11,7 @@ function PokeDescription(props) {
       name: "Missingno",
       id: 0,
       loaded: true,
-      image: urls.questionMark,
+      image: images.questionMark,
       height: 0,
       types: [],
       weight: 0,
@@ -75,13 +68,15 @@ function PokeDescription(props) {
                 className="badge types mb-3"
                 style={{ backgroundColor: bgColor }}
               >
-                <img className="icon" src={`/icons/${type}.svg`} alt="icon" />
+                <img
+                  className="icon"
+                  src={`assets/icons/${type}.svg`}
+                  alt="icon"
+                />
                 {tipo}
               </p>
             );
           })}
-
-          
         </div>
 
         <div className="mt-4 text-center">

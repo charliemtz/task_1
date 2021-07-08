@@ -2,14 +2,17 @@ export const N = 255;
 
 export const gridSize = {
   rows: 6,
-  cols: 8
-}
+  cols: 8,
+};
 
 export const urls = {
   pokeApi: "https://pokeapi.co/api/v2",
-  pokeBall: "https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg",
-  questionMark: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Icon-round-Question_mark.svg"
-}
+};
+
+export const images = {
+  pokeBall: "assets/images/pokeball.png",
+  questionMark: "assets/images/question_mark.svg",
+};
 
 export const typesMetadata = {
   localization: {
@@ -52,8 +55,5 @@ export const typesMetadata = {
     dark: "#705746",
     steel: "#B7B7CE",
     fairy: "#D685AD",
-  }
-}
-
-
-
+  },
+};

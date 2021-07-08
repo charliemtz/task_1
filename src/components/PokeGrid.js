@@ -1,14 +1,7 @@
 import { useHistory } from "react-router-dom";
+import { capitalize } from "../utils/StringUtils";
 
 function PokeGrid(props) {
-  function capitalize(name) {
-    if (typeof name === "string") {
-      return name.charAt(0).toUpperCase() + name.slice(1);
-    } else {
-      return "???";
-    }
-  }
-
   const history = useHistory();
 
   const containerSizes = {

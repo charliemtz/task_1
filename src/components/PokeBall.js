@@ -1,11 +1,11 @@
-import { urls } from "../utils/Constants";
+import { images } from "../utils/Constants";
 
 function PokeBall(props) {
   return (
     <div className="row bottom-row">
       <img
         className="pokeball"
-        src={urls.pokeBall}
+        src={images.pokeBall}
         alt="pokeball"
         onClick={props.onClick}
       />

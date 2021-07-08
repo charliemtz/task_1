@@ -5,12 +5,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PokeGrid from "./components/PokeGrid";
 import PokeBall from "./components/PokeBall";
 import PokeDescription from "./components/PokeDescription";
-import { N, gridSize, urls } from "./utils/Constants";
+import { N, gridSize, urls, images } from "./utils/Constants";
 
 import "./styles/App.css";
 
 function App() {
-  const axios = require('axios').default;
+  const axios = require("axios").default;
 
   let initialArray = [];
   let possibleNumbers = [];
@@ -19,7 +19,7 @@ function App() {
     initialArray.push({
       id: i,
       loaded: false,
-      sprite: urls.questionMark,
+      sprite: images.questionMark,
     });
   }
   const [pokemons, setPokemons] = useState(initialArray);
@@ -53,7 +53,7 @@ function App() {
           console.error(error);
         }
       }
-    }
+    };
     fetchPokemons();
   }, [url, axios]);
 
