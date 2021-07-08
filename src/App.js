@@ -9,6 +9,7 @@ import PokeDescription from "./components/PokeDescription";
 import "./styles/App.css";
 
 function App() {
+  const axios = require('axios').default;
   const N = 255;
 
   const QUESTION_MARK_URL =
@@ -34,27 +35,31 @@ function App() {
   useEffect(() => {
     const fetchPokemons = async () => {
       if (url.length > 0) {
-        const response = await fetch(url);
-        const data = await response.json();
-        setPokemons((prev) => {
-          const i = prev.findIndex((pokemon) => pokemon.id === data.id);
-          prev[i] = {
-            name: data.name,
-            id: data.id,
-            loaded: true,
-            sprite: data.sprites.front_default,
-            image: data.sprites.other["official-artwork"].front_default,
-            height: data.height,
-            types: data.types,
-            weight: data.weight,
-            abilities: data.abilities,
-          };
-          return prev;
-        });
+        try {
+          const response = await axios.get(url);
+          const data = response.data;
+          setPokemons((prev) => {
+            const i = prev.findIndex((pokemon) => pokemon.id === data.id);
+            prev[i] = {
+              name: data.name,
+              id: data.id,
+              loaded: true,
+              sprite: data.sprites.front_default,
+              image: data.sprites.other["official-artwork"].front_default,
+              height: data.height,
+              types: data.types,
+              weight: data.weight,
+              abilities: data.abilities,
+            };
+            return prev;
+          });
+        } catch (error) {
+          console.error(error);
+        }
       }
-    };
+    }
     fetchPokemons();
-  }, [url]);
+  }, [url, axios]);
 
   function randomNumberGenerator(max) {
     return Math.floor(Math.random() * max) + 1;
