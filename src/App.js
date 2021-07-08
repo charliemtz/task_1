@@ -6,6 +6,7 @@ import PokeGrid from "./components/PokeGrid";
 import PokeBall from "./components/PokeBall";
 import PokeDescription from "./components/PokeDescription";
 import { N, gridSize, urls, images } from "./utils/Constants";
+import { randomNumberGenerator } from "./utils/NumberUtils";
 
 import "./styles/App.css";
 
@@ -56,10 +57,6 @@ function App() {
     };
     fetchPokemons();
   }, [url, axios]);
-
-  function randomNumberGenerator(max) {
-    return Math.floor(Math.random() * max) + 1;
-  }
 
   function handlePokeballClick() {
     let randomId;
