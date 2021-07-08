@@ -1,9 +1,84 @@
-#root {
-  background-image: linear-gradient(#DDCDEA, #CCB8F5);
+.bottom-row {
+  height: 20%;
+}
+
+.cell {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin: 10% auto;
+}
+
+.cell:hover .popup {
+  visibility: visible;
+  opacity: 0.9;
 }
 
 .container {
   height: 100vh;
+}
+
+.green-bar {
+  background-color: #66cbbe;
+  margin-top: 0.5rem;
+  height: 0.25rem;
+}
+
+.pokeball {
+  margin: 10px auto 0px auto;
+  height: 150px;
+  width: auto;
+}
+
+.pokemon {
+  margin: auto;
+  max-width: 67%;
+  height: auto;
+  opacity: 1;
+}
+
+.popup {
+  visibility: hidden;
+  height: 0px;
+  opacity: 0;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
+.popup-text {
+  position: relative;
+  background-color: dimgray;
+  bottom: 50px;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  padding-bottom: 0.25rem;
+}
+
+/* triangle below popup (border) */
+.triangle {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-top: solid 25px dimgray;
+  border-left: solid 25px transparent;
+  border-right: solid 25px transparent;
+}
+
+/* triangle below popup (inner) */
+.triangle::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: solid 21px #66cbbe;
+  border-left: solid 21px transparent;
+  border-right: solid 21px transparent;
+  position: absolute;
+  top: -25px;
+  left: -21px;
 }
 
 .row {
@@ -19,88 +94,27 @@
   border-radius: 0.3rem;
 }
 
-.bottom-row {
-  height: 20%;
-}
-
-.cell {
-  color: white;
-  font-size: 2rem;
-  text-align: center;
-  margin: 10% auto; 
-}
-
 .top-row::-webkit-scrollbar {
   width: 10px;
 }
 
+.top-row::-webkit-scrollbar-thumb {
+  background: #9277b7;
+  border-radius: 5px;
+}
+
+.top-row::-webkit-scrollbar-thumb:hover {
+  background: #b8a4d3;
+}
+
 .top-row::-webkit-scrollbar-track {
-  background: #DED1EF;
+  background: #ded1ef;
   border-radius: 5px;
   height: 90%;
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.top-row::-webkit-scrollbar-thumb {
-  background: #9277B7;
-  border-radius: 5px;
-}
-
-.top-row::-webkit-scrollbar-thumb:hover {
-  background: #B8A4D3; 
-}
-
-.pokemon {
-  margin: auto;
-  max-width: 67%;
-  height: auto; 
-  opacity: 100%;
-}
-
-.pokeball {
-  margin: 10px auto 0px auto; 
-  height: inherit;
-  width: auto;
-}
-
-.popup {
-	visibility: hidden;
-	height: 0px;
-	opacity:0;
-  transition:visibility 0.3s linear,opacity 0.3s linear;
-}
-
-.popup-text:after {
-  content:'';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 0;
-  height: 0;
-  border-top: solid 20px #66CBBE;
-  border-left: solid 20px transparent;
-  border-right: solid 20px transparent;
-}
-
-.popup-text {
-	position: relative;
-	background-color: dimgray;
-	bottom: 50px;
-	font-family: 'Lato', sans-serif;
-	font-size: 1.5rem;
-  padding-bottom: 0.25rem;
-}
-
-.green-bar {
-  background-color: #66CBBE;
-  margin-top: 0.5rem;
-  height: 0.25rem;
-}
-
-.cell:hover .popup {
-	visibility: visible;
-	opacity: 0.9;
+#root {
+  background-image: linear-gradient(#ddcdea, #ccb8f5);
 }

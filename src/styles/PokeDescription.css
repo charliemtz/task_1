@@ -1,100 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
-.container-fluid {
-	font-family: 'Lato', sans-serif;
-	padding: 0;
-}
-
-.card {
-	max-width: 16rem;
-	border-radius: 0.5rem; 
-}
-
-.card-header {
-	background-color: #9E80D7;
-	color: white;
-	font-weight: bold;
-	font-size: larger;
-	border-radius: 0.5rem 0.5rem 0 0 !important; 
-}
-
-.card-title {
-	text-align: right;
-	color: dimgray;
+.abilities {
+  list-style-type: none;
+  text-align: right;
 }
 
 .bar {
-	background-color: #9E80D7;
-	width: 100%;
-	border-radius: 1rem;
+  background-color: #9e80d7;
+  width: 100%;
+  border-radius: 1rem;
 }
 
-.progress {
-	height: 5px;
+.card {
+  max-width: 16rem;
+  border-radius: 0.5rem;
 }
 
-.header {
-	background-color: #F9ECFF;
-}
-
-.header-text {
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-p.h2 {
-	font-weight: bold;
-	color: dimgray;
-}
-
-.contents {
-	background-image: linear-gradient(#DDCDEA, #CCB8F5);
-	height: calc(100vh - 110px)
-}
-
-.cards-left {
-	margin-top: calc((475px + 24px - 236px) / 2);
+.card-header {
+  background-color: #9e80d7;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  border-radius: 0.5rem 0.5rem 0 0 !important;
 }
 
 .card-right {
-	margin-left: auto;
+  margin-left: auto;
 }
 
-.img {
-	height: 475px;
+.card-title {
+  text-align: right;
+  color: dimgray;
 }
 
-.types {
-	display: block;
-	margin-left: auto;
-	width: 15rem;
-	font-size: 2em;
-	text-transform: uppercase;
+.cards-left {
+  margin-top: calc((475px + 24px - 236px) / 2);
 }
 
-.abilities {
-	text-align: right;
+.container-fluid {
+  font-family: "Lato", sans-serif;
+  padding: 0;
 }
 
-ul.abilities {
-	list-style-type: none;
+.contents {
+  background-image: linear-gradient(#ddcdea, #ccb8f5);
+  height: calc(100vh - 110px);
 }
 
 .footer {
-	width: auto;
+  width: auto;
 }
 
-.number {
-	margin-right: 10%;
+.h2 {
+  font-weight: bold;
+  color: dimgray;
 }
 
-.name {
-	text-transform: capitalize;
+.header {
+  background-color: #f9ecff;
+}
+
+.header-text {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .icon {
-	height: 1.5rem;
-	margin-bottom: 0.5rem;
-	margin-right: 1rem;
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+.img {
+  height: 475px;
+}
+
+.name {
+  text-transform: capitalize;
+}
+
+.number {
+  margin-right: 10%;
+}
+
+.progress {
+  height: 5px;
+}
+
+.types {
+  display: block;
+  margin-left: auto;
+  width: 15rem;
+  font-size: 2em;
+  text-transform: uppercase;
 }
