@@ -5,24 +5,14 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PokeGrid from "./components/PokeGrid";
 import PokeBall from "./components/PokeBall";
 import PokeDescription from "./components/PokeDescription";
-import { N, gridSize, urls, images } from "./utils/Constants";
+import { N, gridSize, urls } from "./utils/Constants";
 import { randomNumberGenerator } from "./utils/NumberUtils";
+import { updatePokemons, preloadPokemons } from "./utils/PokeUtils";
 
 import "./styles/App.css";
 
 function App() {
-  const axios = require("axios").default;
-
-  let initialArray = [];
-  let possibleNumbers = [];
-  for (let i = 1; i <= N; i++) {
-    possibleNumbers.push(i);
-    initialArray.push({
-      id: i,
-      loaded: false,
-      sprite: images.questionMark,
-    });
-  }
+  let [initialArray, possibleNumbers] = preloadPokemons();
   const [pokemons, setPokemons] = useState(initialArray);
   const rows = useState(gridSize.rows);
   const cols = useState(gridSize.cols);
@@ -30,33 +20,8 @@ function App() {
   const [clickedId, setClickedId] = useState(1);
 
   useEffect(() => {
-    const fetchPokemons = async () => {
-      if (url.length > 0) {
-        try {
-          const response = await axios.get(url);
-          const data = response.data;
-          setPokemons((prev) => {
-            const i = prev.findIndex((pokemon) => pokemon.id === data.id);
-            prev[i] = {
-              name: data.name,
-              id: data.id,
-              loaded: true,
-              sprite: data.sprites.front_default,
-              image: data.sprites.other["official-artwork"].front_default,
-              height: data.height,
-              types: data.types,
-              weight: data.weight,
-              abilities: data.abilities,
-            };
-            return prev;
-          });
-        } catch (error) {
-          console.error(error);
-        }
-      }
-    };
-    fetchPokemons();
-  }, [url, axios]);
+    updatePokemons(url, setPokemons);
+  }, [url]);
 
   function handlePokeballClick() {
     let randomId;
