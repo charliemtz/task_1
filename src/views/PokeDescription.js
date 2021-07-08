@@ -1,23 +1,10 @@
 import "../styles/PokeDescription.css";
-import { images, typesMetadata } from "../utils/Constants";
+import { typesMetadata } from "../utils/Constants";
 import { normalizeId } from "../utils/StringUtils";
+import { loadPokemon } from "../utils/PokeUtils";
 
 export default function PokeDescription(props) {
-  let pokemon = {};
-  if (props.pokemon.loaded === true) {
-    pokemon = props.pokemon;
-  } else {
-    pokemon = {
-      name: "Missingno",
-      id: 0,
-      loaded: true,
-      image: images.questionMark,
-      height: 0,
-      types: [],
-      weight: 0,
-      abilities: [],
-    };
-  }
+  let pokemon = loadPokemon(props.pokemon);
 
   return (
     <div className="container-fluid">

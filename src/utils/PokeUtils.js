@@ -18,11 +18,26 @@ export async function updatePokemons(newId, setPokemons) {
           height: data.height,
           types: data.types,
           weight: data.weight,
-          abilities: data.abilities,
         };
         return prev;
       });
     }
+  }
+}
+
+export function loadPokemon(pokemon) {
+  if (pokemon.loaded === true) {
+    return pokemon;
+  } else {
+    return {
+      name: "Missingno",
+      id: 0,
+      loaded: true,
+      image: images.questionMark,
+      height: 0,
+      types: [],
+      weight: 0,
+    };
   }
 }
 
