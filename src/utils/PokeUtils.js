@@ -4,21 +4,40 @@ import { images, N, urls } from "./Constants";
 
 export async function updatePokemons(newId, setPokemons) {
   if (typeof newId === "number") {
-    const url = `${urls.pokeApi}/pokemon/${newId}`;
-    const data = await PokeApiCall(url);
-    if (isNotEmpty(data)) {
+    const baseUrl = `${urls.pokeApi}/pokemon/${newId}`;
+    const baseData = await PokeApiCall(baseUrl);
+    const encountersUrl = `${urls.pokeApi}/pokemon/${newId}/encounters`;
+    const encountersData = await PokeApiCall(encountersUrl);
+    const speciesUrl = `${urls.pokeApi}/pokemon-species/${newId}`;
+    const speciesData = await PokeApiCall(speciesUrl);
+    if (isNotEmpty(baseData)) {
       setPokemons((prev) => {
-        const i = prev.findIndex((pokemon) => pokemon.id === data.id);
+        const i = prev.findIndex((pokemon) => pokemon.id === baseData.id);
         prev[i] = {
-          name: data.name,
-          id: data.id,
+          name: baseData.name,
+          id: baseData.id,
           loaded: true,
-          sprite: data.sprites.front_default,
-          image: data.sprites.other["official-artwork"].front_default,
-          height: data.height,
-          types: data.types,
-          weight: data.weight,
+          sprite: baseData.sprites.front_default,
+          image: baseData.sprites.other["official-artwork"].front_default,
+          height: baseData.height,
+          types: baseData.types,
+          weight: baseData.weight,
+          stats: baseData.stats,
+          moves: baseData.moves,
+          heldItems: baseData.heldItems,
         };
+        if (isNotEmpty(encountersData)) {
+          prev[i] = {
+            ...prev[i],
+            encountersData: encountersData,
+          };
+        }
+        if (isNotEmpty(speciesData)) {
+          prev[i] = {
+            ...prev[i],
+            speciesData: speciesData,
+          };
+        }
         return prev;
       });
     }
@@ -37,6 +56,7 @@ export function loadPokemon(pokemon) {
       height: 0,
       types: [],
       weight: 0,
+      stats: [],
     };
   }
 }
