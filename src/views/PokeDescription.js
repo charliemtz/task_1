@@ -2,7 +2,7 @@ import "../styles/PokeDescription.css";
 import { images, typesMetadata } from "../utils/Constants";
 import { normalizeId } from "../utils/StringUtils";
 
-function PokeDescription(props) {
+export default function PokeDescription(props) {
   let pokemon = {};
   if (props.pokemon.loaded === true) {
     pokemon = props.pokemon;
@@ -90,8 +90,6 @@ function PokeDescription(props) {
     </div>
   );
 }
-
-export default PokeDescription;
 
 /*
           <div className="card card-right text-black bg-light p-0 mt-5">
