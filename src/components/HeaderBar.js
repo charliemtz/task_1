@@ -5,7 +5,7 @@ export default function HeaderBar(props) {
   const { id, name } = props;
 
   return (
-    <div className="wrapper">
+    <div>
       <div className="header">
         <div className="d-flex pb-1 pt-1 header-text">
           <div className="p-2 number">

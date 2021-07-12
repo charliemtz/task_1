@@ -35,13 +35,19 @@ export default function PokeHome(props) {
 
   return (
     <div className="container">
-      <PokeGrid
-        pokemons={pokemons}
-        rows={rows}
-        cols={cols}
-        onClick={handleGridClick}
-      />
-      <PokeBall onClick={handlePokeballClick} />
+      <div className="row">
+        <div className="col-9">
+          <PokeGrid
+            pokemons={pokemons}
+            rows={rows}
+            cols={cols}
+            onClick={handleGridClick}
+          />
+        </div>
+        <div className="col-3">
+          <PokeBall onClick={handlePokeballClick} />
+        </div>
+      </div>
     </div>
   );
 }

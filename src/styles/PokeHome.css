@@ -5,3 +5,10 @@
 .container {
   height: 100vh;
 }
+
+.col-9 {
+  height: 90vh;
+}
+
+.col-3 {
+}

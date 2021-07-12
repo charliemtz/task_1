@@ -1,13 +1,9 @@
-.row {
-  display: grid;
-}
-
 .pokeball {
-  margin: 10px auto 0px auto;
+  margin: auto;
   height: 150px;
   width: auto;
 }
 
 .bottom-row {
-  height: 20%;
+  height: 100%;
 }
