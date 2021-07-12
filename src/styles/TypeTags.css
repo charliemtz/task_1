@@ -1,0 +1,13 @@
+.icon {
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+.types {
+  display: block;
+  margin-left: auto;
+  width: 15rem;
+  font-size: 2em;
+  text-transform: uppercase;
+}

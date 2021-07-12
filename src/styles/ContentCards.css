@@ -1,0 +1,25 @@
+.card {
+  max-width: 16rem;
+  border-radius: 0.5rem;
+}
+
+.card-header {
+  background-color: #9e80d7;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+.card-right {
+  margin-left: auto;
+}
+
+.card-title {
+  text-align: right;
+  color: dimgray;
+}
+
+.cards-left {
+  margin-top: calc((475px + 24px - 236px) / 2);
+}
