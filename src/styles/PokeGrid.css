@@ -39,10 +39,6 @@
   padding-bottom: 0.25rem;
 }
 
-.row {
-  display: grid;
-}
-
 /* triangle below popup (border) */
 .triangle {
   content: "";
@@ -71,29 +67,30 @@
   left: -21px;
 }
 
-.top-row {
+.wrapper {
+  display: grid;
   padding: 3% 0;
-  height: 80%;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.4);
   overflow-y: overlay;
   min-width: 90%;
   border-radius: 0.3rem;
 }
 
-.top-row::-webkit-scrollbar {
+.wrapper::-webkit-scrollbar {
   width: 10px;
 }
 
-.top-row::-webkit-scrollbar-thumb {
+.wrapper::-webkit-scrollbar-thumb {
   background: #9277b7;
   border-radius: 5px;
 }
 
-.top-row::-webkit-scrollbar-thumb:hover {
+.wrapper::-webkit-scrollbar-thumb:hover {
   background: #b8a4d3;
 }
 
-.top-row::-webkit-scrollbar-track {
+.wrapper::-webkit-scrollbar-track {
   background: #ded1ef;
   border-radius: 5px;
   height: 90%;

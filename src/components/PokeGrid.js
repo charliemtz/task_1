@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { capitalize } from "../utils/StringUtils";
+import PokeCell from "./PokeCell";
 import "../styles/PokeGrid.css";
 
 function PokeGrid(props) {
@@ -18,25 +18,16 @@ function PokeGrid(props) {
   };
 
   return (
-    <div className="row top-row" style={containerSizes}>
+    <div className="row wrapper" style={containerSizes}>
       {props.pokemons.map((pokemon) => (
-        <div key={`cell-${pokemon.id}`} className={`cell`}>
-          <div className="popup" id={`popup-${pokemon.id}`}>
-            <div className="popup-text">
-              <span>{capitalize(pokemon.name)}</span>
-              <div className="green-bar"></div>
-              <div className="triangle"></div>
-            </div>
-          </div>
-          <img
-            className="pokemon"
-            src={pokemon.sprite}
-            alt={`Pokemon ${pokemon.id}`}
-            id={pokemon.id}
-            value={pokemon.loaded}
-            onClick={handleClick}
-          />
-        </div>
+        <PokeCell
+          id={pokemon.id}
+          name={pokemon.name}
+          sprite={pokemon.sprite}
+          loaded={pokemon.loaded}
+          handleClick={handleClick}
+          key={`cell-${pokemon.id}`}
+        />
       ))}
     </div>
   );
