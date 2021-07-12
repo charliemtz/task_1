@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { capitalize } from "../utils/StringUtils";
+import "../styles/PokeGrid.css";
 
 function PokeGrid(props) {
   const history = useHistory();

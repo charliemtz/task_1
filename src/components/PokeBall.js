@@ -1,4 +1,5 @@
 import { images } from "../utils/Constants";
+import "../styles/PokeBall.css";
 
 function PokeBall(props) {
   return (
