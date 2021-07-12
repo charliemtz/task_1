@@ -7,8 +7,6 @@ import PokeDescription from "./views/PokeDescription";
 import { N } from "./utils/Constants";
 import { updatePokemons, preloadPokemons } from "./utils/PokeUtils";
 
-import "./styles/App.css";
-
 export default function App() {
   let [initialArray, possibleNumbers] = preloadPokemons(N);
   const [pokemons, setPokemons] = useState(initialArray);

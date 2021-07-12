@@ -5,6 +5,8 @@ import { N, gridSize } from "../utils/Constants";
 import { randomNumberGenerator } from "../utils/NumberUtils";
 import { updatePokemons } from "../utils/PokeUtils";
 
+import "../styles/PokeHome.css";
+
 export default function PokeHome(props) {
   const rows = useState(gridSize.rows);
   const cols = useState(gridSize.cols);
