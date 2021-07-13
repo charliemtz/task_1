@@ -1,0 +1,71 @@
+.pokelist-container {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.pokelist-header {
+  height: 70px;
+}
+
+.pokelist-header-text {
+  font-family: "Lato";
+  font-size: 1.5em;
+  font-weight: bold;
+  color: dimgray;
+  text-align: center;
+  line-height: 70px;
+}
+
+.green-bar-pokelist {
+  background-color: #63c4be;
+}
+
+.pokelist {
+  height: 85vh;
+  overflow-y: overlay;
+  width: 95%;
+}
+
+.pokelist::-webkit-scrollbar {
+  width: 10px;
+}
+
+.pokelist::-webkit-scrollbar-thumb {
+  background: #63c4be;
+  border-radius: 5px;
+}
+
+.pokelist::-webkit-scrollbar-thumb:hover {
+  background: #aadad7;
+}
+
+.pokelist::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+  height: 90%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.pokeitem {
+  color: dimgray;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+.pokeitem-thumbnail {
+  width: 100%;
+}
+
+.pokeitem-text-container {
+  height: 100%;
+}
+
+.colourable {
+  border-radius: 50em;
+}
+
+.colourable:hover {
+  background-color: #ffac06;
+  color: white;
+}
