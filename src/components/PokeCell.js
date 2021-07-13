@@ -1,7 +1,14 @@
 import { capitalize } from "../utils/StringUtils";
 
 const PokeCell = (props) => {
-  const { id, name, sprite, loaded, handleClick } = props;
+  const { id, name, sprite, loaded, setClickedId, setShowPokemon } = props;
+
+  const onClick = () => {
+    if (loaded) {
+      setClickedId(id - 1);
+      setShowPokemon(true);
+    }
+  };
 
   return (
     <div className="cell">
@@ -18,7 +25,7 @@ const PokeCell = (props) => {
         alt={`Pokemon ${id}`}
         id={id}
         value={loaded}
-        onClick={handleClick}
+        onClick={onClick}
       />
     </div>
   );

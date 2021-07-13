@@ -2,26 +2,23 @@ import PokeCell from "./PokeCell";
 import "../styles/PokeGrid.css";
 
 const PokeGrid = (props) => {
-  const containerSizes = {
-    gridTemplateColumns: "1fr ".repeat(props.cols[0]),
-    gridTemplateRows: "1r ".repeat(props.rows[0]),
-  };
+  const { pokemons, rows, cols, setClickedId, setShowPokemon } = props;
 
-  const handleGridClick = (e) => {
-    if (e.target.attributes.value.value === "true") {
-      props.onClick(e.target.id);
-    }
+  const containerSizes = {
+    gridTemplateColumns: "1fr ".repeat(cols),
+    gridTemplateRows: "1r ".repeat(rows),
   };
 
   return (
     <div className="row wrapper" style={containerSizes}>
-      {props.pokemons.map((pokemon) => (
+      {pokemons.map((pokemon) => (
         <PokeCell
           id={pokemon.id}
           name={pokemon.name}
           sprite={pokemon.sprite}
           loaded={pokemon.loaded}
-          handleClick={handleGridClick}
+          setClickedId={setClickedId}
+          setShowPokemon={setShowPokemon}
           key={`cell-${pokemon.id}`}
         />
       ))}

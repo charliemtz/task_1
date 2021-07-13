@@ -3,23 +3,15 @@ import PokeCard from "./PokeCard";
 import "../styles/RightPane.css";
 
 const RightPane = (props) => {
-  const {
-    pokeballClick,
-    rightPane,
-    setRightPane,
-    clickedPokemon,
-    handleViewMoreClick,
-  } = props;
+  const { clickedPokemon, showPokemon, setShowPokemon, setNewId } = props;
 
-  if (rightPane === "pokeball") {
-    return <PokeBall onClick={pokeballClick} />;
-  } else if (rightPane === "pokemon") {
+  if (showPokemon) {
     return (
-      <PokeCard
-        setRightPane={setRightPane}
-        pokemon={clickedPokemon}
-        onViewMoreClick={handleViewMoreClick}
-      />
+      <PokeCard pokemon={clickedPokemon} setShowPokemon={setShowPokemon} />
+    );
+  } else {
+    return (
+      <PokeBall setNewId={setNewId} possibleNumbers={props.possibleNumbers} />
     );
   }
 };

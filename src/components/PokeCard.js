@@ -1,21 +1,27 @@
+import { useHistory } from "react-router";
 import { normalizeId } from "../utils/StringUtils";
 import "../styles/RightPane.css";
 
 const PokeCard = (props) => {
-  const { setRightPane, pokemon, onViewMoreClick } = props;
+  const { pokemon, setShowPokemon } = props;
+  const history = useHistory();
 
   const handleCloseButton = () => {
-    setRightPane("pokeball");
+    setShowPokemon(false);
+  };
+
+  const handleViewMore = () => {
+    history.push("/pokedescription");
   };
 
   return (
     <div className="row pane align-content-center">
-      <div>
+      <div className="justify-content-end">
         <div className="close-button" onClick={handleCloseButton}>
-          &#215;
+          <span>&#215;</span>
         </div>
       </div>
-      <div className="view-more" onClick={onViewMoreClick}>
+      <div className="view-more" onClick={handleViewMore}>
         Ver más
       </div>
       <img
