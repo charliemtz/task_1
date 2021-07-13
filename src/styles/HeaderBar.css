@@ -1,16 +1,24 @@
 .bar {
-  background-color: #9e80d7;
-  width: 100%;
+  width: 110%;
   border-radius: 1rem;
+}
+
+.violet-bar {
+  background-color: #9e80d7;
+}
+
+.bar-container {
+  width: 100%;
 }
 
 .header {
   background-image: linear-gradient(#faf9f6, #eddffb);
+  width: 110%;
 }
 
 .header.row {
   background-image: linear-gradient(#eddffb, #eddffb);
-  width: 100%;
+  width: 110%;
   margin: 0;
 }
 

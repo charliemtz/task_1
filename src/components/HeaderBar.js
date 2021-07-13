@@ -17,8 +17,10 @@ const HeaderBar = (props) => {
         </div>
       </div>
       <div className="header row">
-        <div className="header-text progress center-block">
-          <div className="bar"></div>
+        <div className="bar-container">
+          <div className="header-text progress center-block">
+            <div className="bar violet-bar"></div>
+          </div>
         </div>
       </div>
     </div>
