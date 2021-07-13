@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import PokeGrid from "../components/PokeGrid";
 import PokeNavBar from "../components/PokeNavBar";
 import RightPane from "../components/RightPane";
@@ -11,6 +12,7 @@ import "../styles/PokeHome.css";
 const PokeHome = (props) => {
   const rows = useState(gridSize.rows);
   const cols = useState(gridSize.cols);
+  const history = useHistory();
 
   const {
     pokemons,
@@ -46,9 +48,9 @@ const PokeHome = (props) => {
     setRightPane("pokemon");
   };
 
-  /* const handleSeeMoreButtonClick = (id) => {
-    // ToDo - function with useHistory hook
-  };*/
+  const handleViewMoreClick = () => {
+    history.push("/pokedescription");
+  };
 
   return (
     <div>
@@ -70,6 +72,7 @@ const PokeHome = (props) => {
               rightPane={rightPane}
               setRightPane={setRightPane}
               clickedPokemon={pokemons[clickedId]}
+              handleViewMoreClick={handleViewMoreClick}
             />
           </div>
         </div>
