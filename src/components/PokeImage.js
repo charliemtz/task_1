@@ -6,7 +6,12 @@ const PokeImage = (props) => {
   return (
     <div className="col-6">
       <div className="text-center">
-        <img className="img" src={image} alt={name} style={{ height: size }} />
+        <img
+          className="poke-img"
+          src={image}
+          alt={name}
+          style={{ height: size }}
+        />
       </div>
     </div>
   );
