@@ -1,7 +1,7 @@
 import { normalizeCard } from "../utils/StringUtils";
 import "../styles/ContentCards.css";
 
-export default function ContentCards(props) {
+const ContentCards = (props) => {
   const { height, weight } = props;
 
   return (
@@ -21,4 +21,6 @@ export default function ContentCards(props) {
       </div>
     </div>
   );
-}
+};
+
+export default ContentCards;

@@ -1,7 +1,7 @@
 import { normalizeId } from "../utils/StringUtils";
 import "../styles/HeaderBar.css";
 
-export default function HeaderBar(props) {
+const HeaderBar = (props) => {
   const { id, name } = props;
 
   return (
@@ -23,4 +23,6 @@ export default function HeaderBar(props) {
       </div>
     </div>
   );
-}
+};
+
+export default HeaderBar;

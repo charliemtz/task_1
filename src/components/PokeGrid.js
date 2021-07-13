@@ -2,7 +2,7 @@ import { useHistory } from "react-router-dom";
 import PokeCell from "./PokeCell";
 import "../styles/PokeGrid.css";
 
-function PokeGrid(props) {
+const PokeGrid = (props) => {
   const history = useHistory();
 
   const containerSizes = {
@@ -10,7 +10,7 @@ function PokeGrid(props) {
     gridTemplateRows: "1r ".repeat(props.rows[0]),
   };
 
-  const handleClick = (e) => {
+  const handleGridClick = (e) => {
     if (e.target.attributes.value.value === "true") {
       props.onClick(e.target.id);
       history.push("/pokedescription");
@@ -25,11 +25,12 @@ function PokeGrid(props) {
           name={pokemon.name}
           sprite={pokemon.sprite}
           loaded={pokemon.loaded}
-          handleClick={handleClick}
+          handleClick={handleGridClick}
           key={`cell-${pokemon.id}`}
         />
       ))}
     </div>
   );
-}
+};
+
 export default PokeGrid;

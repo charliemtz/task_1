@@ -1,6 +1,6 @@
 import { capitalize } from "../utils/StringUtils";
 
-export default function PokeCell(props) {
+const PokeCell = (props) => {
   const { id, name, sprite, loaded, handleClick } = props;
 
   return (
@@ -22,4 +22,6 @@ export default function PokeCell(props) {
       />
     </div>
   );
-}
+};
+
+export default PokeCell;

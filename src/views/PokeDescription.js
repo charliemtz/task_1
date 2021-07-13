@@ -6,7 +6,7 @@ import "../styles/PokeDescription.css";
 
 import { loadPokemon } from "../utils/PokeUtils";
 
-export default function PokeDescription(props) {
+const PokeDescription = (props) => {
   let pokemon = loadPokemon(props.pokemon);
 
   return (
@@ -19,23 +19,6 @@ export default function PokeDescription(props) {
       </div>
     </div>
   );
-}
+};
 
-/*
-          <div className="card card-right text-black bg-light p-0 mt-5">
-            <div className="card-header">Habilidades</div>
-            <div className="card-body">
-              {pokemon.abilities.map((ability) => {
-                return (
-                  <p
-                    className="card-title abilities"
-                    key={`ability-${ability.slot}`}
-                  >
-                    {capitalize(ability.ability.name)}{" "}
-                    {ability.is_hidden ? "(hidden)" : ""}
-                  </p>
-                );
-              })}
-            </div>
-          </div>
-*/
+export default PokeDescription;

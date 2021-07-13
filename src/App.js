@@ -7,7 +7,7 @@ import PokeDescription from "./views/PokeDescription";
 import { N } from "./utils/Constants";
 import { updatePokemons, preloadPokemons } from "./utils/PokeUtils";
 
-export default function App() {
+const App = () => {
   let [initialArray, possibleNumbers] = preloadPokemons(N);
   const [pokemons, setPokemons] = useState(initialArray);
   const [newId, setNewId] = useState();
@@ -37,4 +37,6 @@ export default function App() {
       </Switch>
     </BrowserRouter>
   );
-}
+};
+
+export default App;

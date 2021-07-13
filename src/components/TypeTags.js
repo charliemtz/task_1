@@ -1,7 +1,7 @@
 import { typesMetadata } from "../utils/Constants";
 import "../styles/TypeTags.css";
 
-export default function TypeTags(props) {
+const TypeTags = (props) => {
   const { types } = props;
 
   return (
@@ -23,4 +23,6 @@ export default function TypeTags(props) {
       })}
     </div>
   );
-}
+};
+
+export default TypeTags;

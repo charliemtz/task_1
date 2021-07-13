@@ -1,17 +1,18 @@
 import { images } from "../utils/Constants";
 import "../styles/PokeBall.css";
 
-function PokeBall(props) {
+const PokeBall = (props) => {
+  const { onClick } = props;
   return (
     <div className="row bottom-row">
       <img
         className="pokeball"
         src={images.pokeBall}
         alt="pokeball"
-        onClick={props.onClick}
+        onClick={onClick}
       />
     </div>
   );
-}
+};
 
 export default PokeBall;
