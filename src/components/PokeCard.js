@@ -3,8 +3,18 @@ import "../styles/RightPane.css";
 
 const PokeCard = (props) => {
   const { setRightPane, pokemon, onViewMoreClick } = props;
+
+  const handleCloseButton = () => {
+    setRightPane("pokeball");
+  };
+
   return (
     <div className="row pane align-content-center">
+      <div>
+        <div className="close-button" onClick={handleCloseButton}>
+          &#215;
+        </div>
+      </div>
       <div className="view-more" onClick={onViewMoreClick}>
         Ver más
       </div>

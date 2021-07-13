@@ -48,6 +48,17 @@
   max-width: 12rem;
   max-height: 50px;
   line-height: 50px;
-
   margin: 0 auto;
+}
+
+.close-button {
+  background-color: #9e80d7;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  border-radius: 50%;
+  width: 28px;
+  line-height: 28px;
+  text-align: center;
+  margin: 0 0 0 auto;
 }
