@@ -14,6 +14,7 @@ const App = () => {
   const [discoveredPokemons, setDiscoveredPokemons] = useState(0);
   const [newId, setNewId] = useState();
   const [pokemons, setPokemons] = useState(initialArray);
+  const [rightPane, setRightPane] = useState("pokeball");
 
   return (
     <BrowserRouter>
@@ -29,6 +30,8 @@ const App = () => {
             possibleNumbers={possibleNumbers}
             discoveredPokemons={discoveredPokemons}
             setDiscoveredPokemons={setDiscoveredPokemons}
+            rightPane={rightPane}
+            setRightPane={setRightPane}
           />
         </Route>
         <Route path="/pokedescription">

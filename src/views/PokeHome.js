@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import PokeBall from "../components/PokeBall";
 import PokeGrid from "../components/PokeGrid";
 import PokeNavBar from "../components/PokeNavBar";
+import RightPane from "../components/RightPane";
 import { N, gridSize } from "../utils/Constants";
 import { randomNumberGenerator } from "../utils/NumberUtils";
 import { updatePokemons } from "../utils/PokeUtils";
@@ -21,6 +21,8 @@ const PokeHome = (props) => {
     setClickedId,
     discoveredPokemons,
     setDiscoveredPokemons,
+    rightPane,
+    setRightPane,
   } = props;
   let { possibleNumbers } = props;
 
@@ -39,9 +41,14 @@ const PokeHome = (props) => {
     }
   }
 
-  const handleGridClick = (id) => {
+  const handleCellClick = (id) => {
     setClickedId(id - 1);
+    setRightPane("pokemon");
   };
+
+  /* const handleSeeMoreButtonClick = (id) => {
+    // ToDo - function with useHistory hook
+  };*/
 
   return (
     <div>
@@ -54,11 +61,16 @@ const PokeHome = (props) => {
               pokemons={pokemons}
               rows={rows}
               cols={cols}
-              onClick={handleGridClick}
+              onClick={handleCellClick}
             />
           </div>
           <div className="col-3">
-            <PokeBall onClick={handlePokeballClick} />
+            <RightPane
+              pokeballClick={handlePokeballClick}
+              rightPane={rightPane}
+              setRightPane={setRightPane}
+              clickedPokemon={pokemons[clickedId]}
+            />
           </div>
         </div>
       </div>

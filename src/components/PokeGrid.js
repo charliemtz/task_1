@@ -13,7 +13,7 @@ const PokeGrid = (props) => {
   const handleGridClick = (e) => {
     if (e.target.attributes.value.value === "true") {
       props.onClick(e.target.id);
-      history.push("/pokedescription");
+      // history.push("/pokedescription");
     }
   };
 

@@ -1,5 +1,5 @@
 import { images } from "../utils/Constants";
-import "../styles/PokeBall.css";
+import "../styles/RightPane.css";
 
 const PokeBall = (props) => {
   const { onClick } = props;
