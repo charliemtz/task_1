@@ -1,3 +1,4 @@
 .img {
   height: 475px;
+  filter: drop-shadow(5px 5px 5px #222222);
 }
