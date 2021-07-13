@@ -5,13 +5,18 @@
 }
 
 .header {
-  background-color: #f9ecff;
+  background-image: linear-gradient(#faf9f6, #eddffb);
+}
+
+.header.row {
+  background-image: linear-gradient(#eddffb, #eddffb);
 }
 
 .header-text {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  padding: 0px;
 }
 
 .h2 {

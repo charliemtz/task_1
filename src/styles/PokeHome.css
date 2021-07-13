@@ -3,12 +3,15 @@
 }
 
 .container {
-  height: 100vh;
+  height: calc(100vh - 10px - 50px - 50px);
+  margin-top: 10px;
 }
 
 .col-9 {
-  height: 90vh;
+  height: 85vh;
 }
 
-.col-3 {
+.empty-header {
+  height: 50px;
+  background-image: linear-gradient(#faf9f6, #eddffb);
 }

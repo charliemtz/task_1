@@ -1,8 +1,13 @@
 import { isNotEmpty } from "./ObjectUtils";
 import { PokeApiCall } from "../services/PokeApiCall";
-import { images, N, urls } from "./Constants";
+import { images, urls } from "./Constants";
 
-export async function updatePokemons(newId, setPokemons) {
+export async function updatePokemons(
+  newId,
+  pokemons,
+  setPokemons,
+  setDiscoveredPokemons
+) {
   if (typeof newId === "number") {
     const baseUrl = `${urls.pokeApi}/pokemon/${newId}`;
     const baseData = await PokeApiCall(baseUrl);
@@ -40,6 +45,9 @@ export async function updatePokemons(newId, setPokemons) {
         }
         return prev;
       });
+      setDiscoveredPokemons(() => {
+        return pokemons.filter((item) => item.loaded).length;
+      });
     }
   }
 }
@@ -61,7 +69,7 @@ export function loadPokemon(pokemon) {
   }
 }
 
-export function preloadPokemons(n) {
+export function preload(n) {
   let initialArray = [];
   let possibleNumbers = [];
   for (let i = 1; i <= n; i++) {
@@ -73,8 +81,4 @@ export function preloadPokemons(n) {
     });
   }
   return [initialArray, possibleNumbers];
-}
-
-export function discoveredPokemons(possibleNumbers) {
-  return N - possibleNumbers.length;
 }

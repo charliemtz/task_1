@@ -1,21 +1,19 @@
 import "bootstrap/dist/css/bootstrap.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import PokeHome from "./views/PokeHome";
 import PokeDescription from "./views/PokeDescription";
 import { N } from "./utils/Constants";
-import { updatePokemons, preloadPokemons } from "./utils/PokeUtils";
+import { preload } from "./utils/PokeUtils";
 
 const App = () => {
-  let [initialArray, possibleNumbers] = preloadPokemons(N);
-  const [pokemons, setPokemons] = useState(initialArray);
-  const [newId, setNewId] = useState();
-  const [clickedId, setClickedId] = useState(1);
+  let [initialArray, possibleNumbers] = preload(N);
 
-  useEffect(() => {
-    updatePokemons(newId, setPokemons);
-  }, [newId]);
+  const [clickedId, setClickedId] = useState(1);
+  const [discoveredPokemons, setDiscoveredPokemons] = useState(0);
+  const [newId, setNewId] = useState();
+  const [pokemons, setPokemons] = useState(initialArray);
 
   return (
     <BrowserRouter>
@@ -29,6 +27,8 @@ const App = () => {
             clickedId={clickedId}
             setClickedId={setClickedId}
             possibleNumbers={possibleNumbers}
+            discoveredPokemons={discoveredPokemons}
+            setDiscoveredPokemons={setDiscoveredPokemons}
           />
         </Route>
         <Route path="/pokedescription">
