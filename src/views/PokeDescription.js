@@ -13,11 +13,16 @@ const PokeDescription = (props) => {
   return (
     <div className="container-fluid">
       <PokeNavBar discoveredPokemons={props.discoveredPokemons} />
-      <HeaderBar id={pokemon.id} name={pokemon.name} />
       <div className="contents row">
-        <ContentCards height={pokemon.height} weight={pokemon.weight} />
-        <TypeTags types={pokemon.types} />
-        <PokeImage image={pokemon.image} name={pokemon.name} />
+        <div className="col-8">
+          <HeaderBar id={pokemon.id} name={pokemon.name} />
+          <div className="row">
+            <ContentCards height={pokemon.height} weight={pokemon.weight} />
+            <PokeImage image={pokemon.image} name={pokemon.name} />
+            <TypeTags types={pokemon.types} />
+          </div>
+        </div>
+        <div className="col-4"></div>
       </div>
     </div>
   );

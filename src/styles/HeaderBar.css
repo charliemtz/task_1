@@ -10,6 +10,8 @@
 
 .header.row {
   background-image: linear-gradient(#eddffb, #eddffb);
+  width: 100%;
+  margin: 0;
 }
 
 .header-text {

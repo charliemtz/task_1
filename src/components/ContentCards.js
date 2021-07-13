@@ -5,7 +5,7 @@ const ContentCards = (props) => {
   const { height, weight } = props;
 
   return (
-    <div className="position-absolute cards-left">
+    <div className="align-self-center col-3">
       <div className="card text-black mb-2 p-0">
         <div className="card-header">Altura</div>
         <div className="card-body">

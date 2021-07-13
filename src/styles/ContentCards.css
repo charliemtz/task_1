@@ -1,5 +1,4 @@
 .card {
-  max-width: 16rem;
   border-radius: 0.5rem;
 }
 
@@ -18,8 +17,4 @@
 .card-title {
   text-align: right;
   color: dimgray;
-}
-
-.cards-left {
-  margin-top: calc((475px + 24px - 236px) / 2);
 }
