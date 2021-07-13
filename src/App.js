@@ -35,7 +35,10 @@ const App = () => {
           />
         </Route>
         <Route path="/pokedescription">
-          <PokeDescription pokemon={pokemons[clickedId]} />
+          <PokeDescription
+            pokemon={pokemons[clickedId]}
+            discoveredPokemons={discoveredPokemons}
+          />
         </Route>
       </Switch>
     </BrowserRouter>
