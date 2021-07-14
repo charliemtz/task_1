@@ -15,6 +15,7 @@ const App = () => {
   const [newId, setNewId] = useState();
   const [pokemons, setPokemons] = useState(initialArray);
   const [showPokemon, setShowPokemon] = useState(false);
+  const [tabExtraInfo, setTabExtraInfo] = useState("encounters");
 
   return (
     <BrowserRouter>
@@ -41,6 +42,8 @@ const App = () => {
             pokemons={pokemons}
             setClickedId={setClickedId}
             setShowPokemon={setShowPokemon}
+            tabExtraInfo={tabExtraInfo}
+            setTabExtraInfo={setTabExtraInfo}
           />
         </Route>
       </Switch>

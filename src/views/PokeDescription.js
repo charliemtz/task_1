@@ -1,16 +1,25 @@
 import ContentCards from "../components/ContentCards";
 import HeaderBar from "../components/HeaderBar";
+import PokeExtraInfo from "../components/PokeExtraInfo";
 import PokeImage from "../components/PokeImage";
 import PokeList from "../components/PokeList";
 import PokeNavBar from "../components/PokeNavBar";
 import TypeTags from "../components/TypeTags";
 import "../styles/PokeDescription.css";
 
-import { loadPokemon } from "../utils/PokeUtils";
+import { loadPokemon, loadExtraInfo } from "../utils/PokeUtils";
 
 const PokeDescription = (props) => {
-  const { discoveredPokemons, pokemons, setClickedId, setShowPokemon } = props;
-  let pokemon = loadPokemon(props.selectedPokemon);
+  const {
+    discoveredPokemons,
+    pokemons,
+    setClickedId,
+    setShowPokemon,
+    tabExtraInfo,
+    setTabExtraInfo,
+  } = props;
+  const pokemon = loadPokemon(props.selectedPokemon);
+  const extraInfo = loadExtraInfo(props.selectedPokemon);
 
   return (
     <div className="container-fluid">
@@ -31,6 +40,13 @@ const PokeDescription = (props) => {
             setShowPokemon={setShowPokemon}
           />
         </div>
+      </div>
+      <div className="row">
+        <PokeExtraInfo
+          extraInfo={extraInfo}
+          tabExtraInfo={tabExtraInfo}
+          setTabExtraInfo={setTabExtraInfo}
+        />
       </div>
     </div>
   );
