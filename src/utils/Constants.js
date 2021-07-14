@@ -10,7 +10,10 @@ export const urls = {
 };
 
 export const images = {
-  pokeBall: "assets/images/pokeball.png",
+  avatar: "assets/images/avatar.png",
+  checklist: "assets/images/checklist.png",
+  pokeball: "assets/images/pokeball.png",
+  pokeballIcon: "assets/images/pokeball-icon.png",
   questionMark: "assets/images/question_mark.svg",
 };
 

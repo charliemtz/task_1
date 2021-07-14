@@ -22,7 +22,7 @@ const PokeBall = (props) => {
     <div className="row pane align-content-center">
       <img
         className="right-images"
-        src={images.pokeBall}
+        src={images.pokeball}
         alt="pokeball"
         onClick={handleClick}
       />
