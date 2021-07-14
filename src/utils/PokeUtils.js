@@ -119,8 +119,6 @@ export function loadExtraInfo(pokemon) {
       });
       extraData.encounters.push(newEncounter);
     });
-    console.log(pokemon.encountersData);
-    console.log(extraData.encounters);
 
     // 4. Held Items
     pokemon.heldItems.forEach((heldItem) => {
