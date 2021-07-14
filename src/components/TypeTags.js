@@ -4,6 +4,13 @@ import "../styles/TypeTags.css";
 const TypeTags = (props) => {
   const { types } = props;
 
+  if (typeof types === "undefined") {
+    return (
+      <div className="col-3">
+        <div className="mt-5"></div>
+      </div>
+    );
+  }
   return (
     <div className="col-3">
       <div className="mt-5">
