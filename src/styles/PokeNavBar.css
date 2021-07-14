@@ -4,7 +4,7 @@
   font-family: "Lato";
 }
 
-.checklist-container {
+.todos-container {
   width: 20%;
   height: 50px;
   background-color: white;
@@ -21,7 +21,7 @@
   left: 20%;
 }
 
-.checklist-container:after {
+.todos-container:after {
   content: "";
   width: 1rem;
   height: 100%;
@@ -32,7 +32,7 @@
   background: rgb(229, 221, 248);
 }
 
-.checklist-container h2 {
+.todos-container h2 {
   color: #ffb50c;
   line-height: 50px;
   font-size: 1.5rem;

@@ -1,11 +1,17 @@
+import { useHistory } from "react-router-dom";
 import "../styles/PokeNavBar.css";
 
 const PokeNavBar = (props) => {
   const { discoveredPokemons } = props;
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/");
+  };
 
   return (
     <div className="poke-nav-bar">
-      <div className="checklist-container">
+      <div className="todos-container" onClick={handleClick}>
         <h2>
           <img
             className="checklist"
