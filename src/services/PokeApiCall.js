@@ -1,5 +1,6 @@
+import axios from "axios";
+
 export const PokeApiCall = async (url) => {
-  const axios = require("axios").default;
   let data = {};
   if (url.length > 0) {
     try {
