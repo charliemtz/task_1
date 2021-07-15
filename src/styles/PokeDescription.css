@@ -10,6 +10,53 @@
   height: calc(100vh - 50px - 10px);
 }
 
-.left-container {
+.info-container {
   margin-top: 10px;
+}
+
+.extra-info-container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.extra-info-header-left,
+.extra-info-header-right {
+  height: 50px;
+}
+
+.extra-info-header-left {
+  background-image: linear-gradient(
+    to right,
+    rgba(158, 128, 215, 0),
+    rgba(158, 128, 215, 1)
+  );
+}
+
+.extra-info-header-middle {
+  background-color: rgba(158, 128, 215, 1);
+  height: 50px;
+  line-height: 50px;
+}
+
+.extra-info-header-right {
+  background-image: linear-gradient(
+    to left,
+    rgba(158, 128, 215, 0),
+    rgba(158, 128, 215, 1)
+  );
+}
+
+.extra-info-data {
+  background-color: #f1effc;
+  border-radius: 5px;
+  height: 250px;
+}
+
+.extra-info-icons {
+  height: 40px;
+}
+
+.extra-info-arrows {
+  filter: invert(84%) sepia(43%) saturate(142%) hue-rotate(204deg)
+    brightness(105%) contrast(98%);
 }

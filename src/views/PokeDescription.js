@@ -27,10 +27,17 @@ const PokeDescription = (props) => {
       <div className="contents row">
         <div className="col-8">
           <HeaderBar id={pokemon.id} name={pokemon.name} />
-          <div className="row left-container">
+          <div className="row info-container">
             <ContentCards height={pokemon.height} weight={pokemon.weight} />
             <PokeImage image={pokemon.image} name={pokemon.name} />
             <TypeTags types={pokemon.types} />
+          </div>
+          <div className="row">
+            <PokeExtraInfo
+              extraInfo={extraInfo}
+              tabExtraInfo={tabExtraInfo}
+              setTabExtraInfo={setTabExtraInfo}
+            />
           </div>
         </div>
         <div className="col-4">
@@ -40,13 +47,6 @@ const PokeDescription = (props) => {
             setShowPokemon={setShowPokemon}
           />
         </div>
-      </div>
-      <div className="row">
-        <PokeExtraInfo
-          extraInfo={extraInfo}
-          tabExtraInfo={tabExtraInfo}
-          setTabExtraInfo={setTabExtraInfo}
-        />
       </div>
     </div>
   );

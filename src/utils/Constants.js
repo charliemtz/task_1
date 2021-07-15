@@ -17,6 +17,16 @@ export const images = {
   questionMark: "assets/images/question_mark.svg",
 };
 
+export const icons = {
+  stats: "assets/icons/stats.png",
+  moves: "assets/icons/moves.jpg",
+  encounters: "assets/icons/encounters.png",
+  heldItems: "assets/icons/held-items.png",
+  species: "assets/icons/species.png",
+  leftArrow: "assets/icons/left-arrow.svg",
+  rightArrow: "assets/icons/right-arrow.svg",
+};
+
 export const typesMetadata = {
   localization: {
     normal: "normal",
