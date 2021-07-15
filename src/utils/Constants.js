@@ -19,7 +19,7 @@ export const images = {
 
 export const icons = {
   stats: "assets/icons/stats.png",
-  moves: "assets/icons/moves.jpg",
+  moves: "assets/icons/moves.png",
   encounters: "assets/icons/encounters.png",
   heldItems: "assets/icons/held-items.png",
   species: "assets/icons/species.png",

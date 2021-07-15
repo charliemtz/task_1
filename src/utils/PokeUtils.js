@@ -93,9 +93,6 @@ export function loadExtraInfo(pokemon) {
     // - Nombre del lugar
     // - Método (caminando, surfeando)
     // - Alguna condición necesaria si tiene (que sea de día, de noche, etc)
-    // extraData.encounters = pokemon.encountersData;
-
-    // console.log(pokemon.encountersData);
     pokemon.encountersData.forEach((encounter) => {
       let newEncounter = {
         location: "",

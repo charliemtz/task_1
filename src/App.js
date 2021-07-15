@@ -15,7 +15,7 @@ const App = () => {
   const [newId, setNewId] = useState();
   const [pokemons, setPokemons] = useState(initialArray);
   const [showPokemon, setShowPokemon] = useState(false);
-  const [tabExtraInfo, setTabExtraInfo] = useState("encounters");
+  const [tabExtraInfo, setTabExtraInfo] = useState(3);
 
   return (
     <BrowserRouter>
