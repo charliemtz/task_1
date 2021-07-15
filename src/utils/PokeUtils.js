@@ -154,6 +154,7 @@ export function preload(n) {
   for (let i = 1; i <= n; i++) {
     possibleNumbers.push(i);
     initialArray.push({
+      name: "???",
       id: i,
       loaded: false,
       sprite: images.questionMark,

@@ -59,6 +59,7 @@
 
 .pokeitem-text-container {
   height: 100%;
+  text-transform: capitalize;
 }
 
 .colourable {

@@ -1,5 +1,3 @@
-import { capitalize } from "../utils/StringUtils";
-
 const PokeCell = (props) => {
   const { id, name, sprite, loaded, setClickedId, setShowPokemon } = props;
 
@@ -14,7 +12,7 @@ const PokeCell = (props) => {
     <div className="cell">
       <div className="popup" id={`popup-${id}`}>
         <div className="popup-text">
-          <span>{capitalize(name)}</span>
+          <span>{name}</span>
           <div className="green-bar"></div>
           <div className="triangle"></div>
         </div>

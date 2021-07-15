@@ -1,4 +1,4 @@
-import { capitalize, normalizeId } from "../utils/StringUtils";
+import { normalizeId } from "../utils/StringUtils";
 
 const PokeItem = (props) => {
   const { name, id, loaded, image, setClickedId, setShowPokemon } = props;
@@ -20,7 +20,7 @@ const PokeItem = (props) => {
           <div className="col-4 align-self-center">
             <div className="row pokeitem-text-container">
               <span>{`N.º ${normalizeId(id)}`}</span>
-              <span>{capitalize(name)}</span>
+              <span>{name}</span>
             </div>
           </div>
         </div>
