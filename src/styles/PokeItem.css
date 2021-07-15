@@ -1,0 +1,23 @@
+.pokeitem {
+  color: dimgray;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+.pokeitem-thumbnail {
+  width: 100%;
+}
+
+.pokeitem-text-container {
+  height: 100%;
+  text-transform: capitalize;
+}
+
+.colourable {
+  border-radius: 50em;
+}
+
+.colourable:hover {
+  background-color: #ffac06;
+  color: white;
+}

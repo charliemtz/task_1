@@ -1,3 +1,5 @@
+import "../styles/PokeCell.css";
+
 const PokeCell = (props) => {
   const { id, name, sprite, loaded, setClickedId, setShowPokemon } = props;
 

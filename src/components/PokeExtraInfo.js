@@ -1,4 +1,5 @@
 import { icons } from "../utils/Constants";
+import "../styles/PokeExtraInfo.css";
 
 const PokeExtraInfo = (props) => {
   const { extraInfo, tabExtraInfo, setTabExtraInfo } = props;

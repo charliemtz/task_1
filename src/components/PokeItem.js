@@ -1,4 +1,5 @@
 import { normalizeId } from "../utils/StringUtils";
+import "../styles/PokeItem.css";
 
 const PokeItem = (props) => {
   const { name, id, loaded, image, setClickedId, setShowPokemon } = props;

@@ -1,6 +1,6 @@
 import { useHistory } from "react-router";
 import { normalizeId } from "../utils/StringUtils";
-import "../styles/RightPane.css";
+import "../styles/PokeCard.css";
 
 const PokeCard = (props) => {
   const { pokemon, setShowPokemon } = props;
