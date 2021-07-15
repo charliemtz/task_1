@@ -1,0 +1,4 @@
+.extra-info-arrows {
+  filter: invert(84%) sepia(43%) saturate(142%) hue-rotate(204deg)
+    brightness(105%) contrast(98%);
+}
