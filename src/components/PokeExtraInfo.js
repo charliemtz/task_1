@@ -1,5 +1,6 @@
 import { icons } from "../utils/Constants";
 import PokeExtraArrow from "./PokeExtraArrow";
+import PokeExtraData from "./PokeExtraData";
 import PokeExtraIcon from "./PokeExtraIcon";
 import "../styles/PokeExtraInfo.css";
 
@@ -7,7 +8,6 @@ const PokeExtraInfo = (props) => {
   const { extraInfo, tabExtraInfo, setTabExtraInfo } = props;
   const tab = Object.keys(extraInfo)[tabExtraInfo - 1];
   const extraInfoSlice = extraInfo[tab];
-  console.log(extraInfoSlice);
 
   return (
     <div className="extra-info-container">
@@ -74,7 +74,9 @@ const PokeExtraInfo = (props) => {
         </div>
         <div className="extra-info-header-right col-1"></div>
       </div>
-      <div className="extra-info-data row"></div>
+      <div className="extra-info-data row">
+        <PokeExtraData tabExtraInfo={tabExtraInfo} data={extraInfoSlice} />
+      </div>
     </div>
   );
 };
