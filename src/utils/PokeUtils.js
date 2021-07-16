@@ -67,11 +67,21 @@ export function loadPokemon(pokemon) {
   }
 }
 
+function compareMethods(oldMethod, newMethod) {
+  const sameNames = oldMethod.name === newMethod.name;
+  const sameConditions =
+    oldMethod.conditions.length === newMethod.conditions.length &&
+    oldMethod.conditions.every(
+      (val, index) => val === newMethod.conditions[index]
+    );
+  return sameNames && sameConditions;
+}
+
 export function loadExtraInfo(pokemon) {
   let extraData = {
     stats: {},
     moves: [],
-    encounters: [],
+    encounters: {},
     heldItems: [],
     species: {},
   };
@@ -94,27 +104,38 @@ export function loadExtraInfo(pokemon) {
     // - Método (caminando, surfeando)
     // - Alguna condición necesaria si tiene (que sea de día, de noche, etc)
     pokemon.encountersData.forEach((encounter) => {
-      let newEncounter = {
-        location: "",
-        methods: [],
-      };
-      newEncounter.location = encounter.location_area.name;
+      const location = encounter.location_area.name;
+
       encounter.version_details.forEach((detail) => {
-        let newMethod = {
-          version: "",
-          name: "",
-          conditions: [],
-        };
-        newMethod.version = detail.version.name;
+        const version = detail.version.name;
+        if (extraData.encounters[version] === undefined) {
+          extraData.encounters[version] = [];
+        }
+        const methods = [];
         detail.encounter_details.forEach((encounter) => {
+          const newMethod = {
+            name: "",
+            conditions: [],
+          };
           newMethod.name = encounter.method.name;
           encounter.condition_values.forEach((condition_value) => {
             newMethod.conditions.push(condition_value.name);
           });
+          // check if exact same method doesn't already exist, and only then push it to methods:
+          let foundExactSameMethod = false;
+          methods.forEach((oldMethod) => {
+            foundExactSameMethod = compareMethods(oldMethod, newMethod);
+          });
+          if (!foundExactSameMethod) {
+            methods.push(newMethod);
+          }
         });
-        newEncounter.methods.push(newMethod);
+        const newEncounter = {
+          location: location,
+          methods: methods,
+        };
+        extraData.encounters[version].push(newEncounter);
       });
-      extraData.encounters.push(newEncounter);
     });
 
     // 4. Held Items
